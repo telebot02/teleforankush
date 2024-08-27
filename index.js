@@ -5,9 +5,9 @@ const axios = require("axios");
 
 const testingChatId = "1493065360";
 const bonusChatId = "2247051543";
-const apiId = 28596369;
-const apiHash = "f50cfe3b10da015b2c2aa0ad31414a55";
-const sessionKey = "1BQANOTEuMTA4LjU2LjE2MgG7Lh+OYzvB3h6d58gAZWlsY9Vxr8G3NbqpkCXpsdrpSqJ3lXmDbK8aFiVVNNhBfsbceijMSKBDH3vUs04iwBVj03aJ1wA8i4kgWHWa1m0JeSoh6QBydndM3z5JLjGdXwspXfdM65L6KOsMrSE7IAiC5pltXmuZe6LtlAHzb9peQ7DTPd3YBLPumNZ2esqwGEL9OkfiwwiX48112Y2pBBO1jcXvlhElrqAK5lN9O/R2RBe1LhkU5Lxdt19zrtMzEd6IU//i0ko7DKEWHcMIqJWEp7kszx5pLKk+UERpzdQhRB8o1TV2JzvZ8rikDbh4kWZO5i69/Dyfj7h1tuK4EbPlfw==";
+const apiId = 23563414;
+const apiHash = "b0d6b98b363839b22acb1fd056ab2a07";
+const sessionKey = "1BQANOTEuMTA4LjU2LjE2MgG7u99WWjPm0yR5vW9xwfDuJNz0cycmIqzLRUyHnTYY1JihY1yOiVVPBsoa+ZHsMmavB1vFc7wjEB6JrMcLn0sExe+Y3e7MfH2Bc6G061lRpvIpvFs5H1X/u7H+akCMvdnEKFNOP6u7V/e8QHMJXVyxlPb/7TBKX3PaYcNxhiygp/OVPIz3AM8Hz7KJ+wMxwiP4OXCTOMouFtYs7N2DA8KvgJMxGI8yVP3JSGkhOuQE3Qu6JPHnDobvEynjWdlcITi5SKRDacuygjGxFh4P8baVT01EXGACnzoCSyeLsdNjNIAeQInt4cp3WEbYrrrGOOJ9vvW/H9ZvdQ6cK4ZJJ/15Vw==";
 const stringSession = new StringSession(sessionKey);
 const apiUrl = "https://colorwiz.cyou/mana/receive_red_packet";
 
@@ -67,8 +67,8 @@ const extractRedeemCode = (text) => {
 
       if (redeemCode) {
         try {
-          const data = await sendRedeemRequest("+917015957516", redeemCode);
-          await handleRedeemResponse(client, data, "Ankush");
+          const data = await sendRedeemRequest("+918685862889", redeemCode);
+          await handleRedeemResponse(client, data, "Bhai Ankush");
         } catch (error) {
           console.error(`Error handling redeem response: ${error.message}`);
         }
