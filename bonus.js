@@ -51,19 +51,20 @@ const extractRedeemCode = (text) => {
 
 (async () => {
     await client.connect();
-  
-    let lastMessageId = null; // Initialize to track the latest message ID
+    
+    let lastMessageIds = { "@colorwiz_bonus": null, "@testinggroupbonus": null };
 
     while (true) {
         try {
-            // Fetch the latest message from the channel
-            const messages = await client.getMessages("@colorwiz_bonus", { limit: 1 });
+            // Check messages from both channels
+            for (const channel of ["@colorwiz_bonus", "@testinggroupbonus"]) {
+                const messages = await client.getMessages(channel, { limit: 1 });
 
-            if (messages.length > 0) {
-                const latestMessage = messages[0];
+                if (messages.length > 0) {
+                    const latestMessage = messages[0];
 
-                if (lastMessageId === null || latestMessage.id > lastMessageId) {
-                    lastMessageId = latestMessage.id;
+                    if (lastMessageIds[channel] === null || latestMessage.id > lastMessageIds[channel]) {
+                        lastMessageIds[channel] = latestMessage.id;
 
                         const redeemCode = extractRedeemCode(latestMessage.message);
 
