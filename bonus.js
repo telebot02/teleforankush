@@ -4,7 +4,7 @@ const { StringSession } = require("telegram/sessions");
 
 const apiId = 23563414;
 const apiHash = "b0d6b98b363839b22acb1fd056ab2a07";
-const sessionKey = "1BQANOTEuMTA4LjU2LjE2MgG7u99WWjPm0yR5vW9xwfDuJNz0cycmIqzLRUyHnTYY1JihY1yOiVVPBsoa+ZHsMmavB1vFc7wjEB6JrMcLn0sExe+Y3e7MfH2Bc6G061lRpvIpvFs5H1X/u7H+akCMvdnEKFNOP6u7V/e8QHMJXVyxlPb/7TBKX3PaYcNxhiygp/OVPIz3AM8Hz7KJ+wMxwiP4OXCTOMouFtYs7N2DA8KvgJMxGI8yVP3JSGkhOuQE3Qu6JPHnDobvEynjWdlcITi5SKRDacuygjGxFh4P8baVT01EXGACnzoCSyeLsdNjNIAeQInt4cp3WEbYrrrGOOJ9vvW/H9ZvdQ6cK4ZJJ/15Vw==";
+const sessionKey = "1BQANOTEuMTA4LjU2LjE2MgG7Avu8Srkuxhm7TZVSbKAqO9EOO5MS8kuEOZiHPNco8bWX2o5iyT1NizsvwH6429qO4fEALIlaQobcGXIJXGctL3KnlpJQwRkcWQl81Ric6lhFoDnFDsWCqfsLpBfyFr8opOHneOsAoWr28LumIf9SfkpK+ZdTEDwKqk4/Di89N5Och5Kt+hErSX7L8lN3M8ZkK/y18loAk1CCB2nkGv7U6TBSCY39d32rPkJYXzXrhyR5oMWFgP8Ty03LYq5Y2zbK7LiCYFz7CLtfJM7DN6K3QFtnYid8ekHI7uEVrgs+G17ghu2J80VvYXoMX8K3EQtyIxTNrdmVCPPGPwmDzMKWVQ==";
 
 const apiUrl = "https://colorwiz.cyou/mana/receive_red_packet";
 
