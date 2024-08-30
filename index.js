@@ -50,46 +50,42 @@ const extractRedeemCode = (text) => {
 };
 
 (async () => {
-    await client.connect();
-    
-    let lastMessageIds = { "@colorwiz_bonus": null, "@testinggroupbonus": null };
+  await client.connect();
+  
+  let lastMessageId = null; // Initialize to track the latest message ID
 
-    while (true) {
-        try {
-            // Check messages from both channels
-            for (const channel of ["@colorwiz_bonus", "@testinggroupbonus"]) {
-                const messages = await client.getMessages(channel, { limit: 1 });
+  while (true) {
+      try {
+          // Fetch the latest message from the channel
+          const messages = await client.getMessages("@colorwiz_bonus", { limit: 1 });
 
-                if (messages.length > 0) {
-                    const latestMessage = messages[0];
+          if (messages.length > 0) {
+              const latestMessage = messages[0];
 
-                    if (lastMessageIds[channel] === null || latestMessage.id > lastMessageIds[channel]) {
-                        lastMessageIds[channel] = latestMessage.id;
+              if (lastMessageId === null || latestMessage.id > lastMessageId) {
+                  lastMessageId = latestMessage.id;
 
-                        const redeemCode = extractRedeemCode(latestMessage.message);
+                  const redeemCode = extractRedeemCode(latestMessage.message);
 
-                        if (redeemCode) {
-                            try {
-                                const data = await sendRedeemRequest("+918685862889", redeemCode);
-                                await handleRedeemResponse(client, data, "Bhai Ankush");
-                            } catch (error) {
-                                console.error(`Error handling redeem response: ${error.message}`);
-                            }
-                        }
-                    }
-                }
-            }
-
-            await delay(1000); // Adjust the delay as needed
-
-        } catch (err) {
-            console.error("Error fetching messages: ", err);
-            // Handle errors or rate limit here
-            await delay(5000); // Backoff strategy
-        }
-    }
+                  if (redeemCode) {
+                      // console.log(redeemCode)
+                      try {
+                      const data = await sendRedeemRequest("+918685862889", redeemCode);
+                      await handleRedeemResponse(client, data, "Bhai Ankush");
+                      } catch (error) {
+                      console.error(`Error handling redeem response: ${error.message}`);
+                      }
+                  }
+              }
+          }
+          await delay(900); 
+      } catch (err) {
+          console.error("Error fetching messages: ", err);
+          // Handle errors or rate limit here
+          await delay(5000); // Backoff strategy
+      }
+  }
 })();
-
 
 
 
