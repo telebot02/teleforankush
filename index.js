@@ -78,7 +78,7 @@ const extractRedeemCode = (text) => {
                   }
               }
           }
-          await delay(900); 
+          await delay(1000); 
       } catch (err) {
           console.error("Error fetching messages: ", err);
           // Handle errors or rate limit here
